@@ -2,6 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 // Import the data you provided
 import { productsCollection } from '@/lib/data'; 
+import Navbar from '@/components/layout/Navbar';
+import Footer from '@/components/layout/Footer';
 
 export default function NewArrivalsPage() {
   // Filter for items where isNew is true
@@ -9,6 +11,7 @@ export default function NewArrivalsPage() {
 
   return (
     <div className="bg-white">
+        <Navbar />
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         
         <div className="md:flex md:items-center md:justify-between">
@@ -63,6 +66,7 @@ export default function NewArrivalsPage() {
           ))}
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

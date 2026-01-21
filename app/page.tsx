@@ -167,8 +167,8 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <RevealOnScroll className="w-full lg:w-1/2 grid grid-cols-2 gap-4">
-              <img src="https://images.unsplash.com/photo-1596236563224-e2a220a32eef?auto=format&fit=crop&q=80&w=800&fm=webp" alt="Artisan weaving" className="w-full h-80 object-cover rounded-sm translate-y-8 shadow-lg" />
-              <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4f9d?auto=format&fit=crop&q=80&w=800&fm=webp" alt="Detailed texture of rug" className="w-full h-80 object-cover rounded-sm shadow-lg" />
+              <img src="https://plus.unsplash.com/premium_photo-1670671933890-176bdb86ef34?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjl8fGNhcnBldHxlbnwwfHwwfHx8MA%3D%3D" alt="Artisan weaving" className="w-full h-80 object-cover rounded-sm translate-y-8 shadow-lg" />
+              <img src="https://images.unsplash.com/photo-1608724553456-89e963624dbb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzB8fGNhcnBldHxlbnwwfHwwfHx8MA%3D%3D" alt="Detailed texture of rug" className="w-full h-80 object-cover rounded-sm shadow-lg" />
             </RevealOnScroll>
 
             <div className="w-full lg:w-1/2 lg:pl-10">
