@@ -34,36 +34,50 @@ const Navbar = () => {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center relative">
-          <button 
-            className="lg:hidden text-gray-900 p-2 hover:bg-gray-100 rounded-full transition-colors -ml-2 z-10"
-            onClick={() => setIsMobileMenuOpen(true)}
-            aria-label="Open menu"
-          >
-            <Menu className="w-6 h-6" />
-          </button>
+          {/* Left side - Menu button (mobile) / Logo (desktop) */}
+          <div className="flex items-center flex-shrink-0">
+            <button 
+              className="lg:hidden text-gray-900 p-2 hover:bg-gray-100 rounded-full transition-colors -ml-2 z-10"
+              onClick={() => setIsMobileMenuOpen(true)}
+              aria-label="Open menu"
+            >
+              <Menu className="w-6 h-6" />
+            </button>
 
-          <a 
-            href="/" 
-            className={`text-2xl font-light tracking-widest uppercase cursor-pointer transition-opacity duration-1000 absolute left-1/2 transform -translate-x-1/2 lg:static lg:left-auto lg:transform-none ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
-          >
-            Kaleen<span className="font-bold"> </span>Baba
-          </a>
-
-          <div className="hidden lg:flex space-x-12">
-            {['Collections', 'New Arrivals', 'Design', 'Trade'].map((item, i) => (
-              <a 
-                key={item} 
-                href={item === 'Collections' ? '/collections' : item === 'New Arrivals' ? '/new_arrival' : item === 'Design' ? '/design' : item === 'Trade' ? '/trade' : '#'} 
-                className={`text-sm font-medium text-gray-400 hover:text-gray-900 transition-all duration-700 relative group ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}
-                style={{ transitionDelay: `${i * 100 + 500}ms` }}
-              >
-                {item}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gray-900 transition-all duration-300 group-hover:w-full"></span>
-              </a>
-            ))}
+            <a 
+              href="/" 
+              className={`text-2xl font-light tracking-widest uppercase cursor-pointer transition-opacity duration-1000 hidden lg:block ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+            >
+              Kaleen<span className="font-bold"> </span>Baba
+            </a>
           </div>
 
-          <div className={`flex items-center space-x-6 transition-opacity duration-1000 delay-700 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
+          {/* Center - Logo (mobile) / Navigation (desktop) */}
+          <div className="flex-1 flex justify-center lg:justify-center lg:flex-none lg:ml-8">
+            <a 
+              href="/" 
+              className={`text-2xl font-light tracking-widest uppercase cursor-pointer transition-opacity duration-1000 lg:hidden ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+            >
+              Kaleen<span className="font-bold"> </span>Baba
+            </a>
+
+            <div className="hidden lg:flex space-x-12">
+              {['Collections', 'New Arrivals', 'Design', 'Trade'].map((item, i) => (
+                <a 
+                  key={item} 
+                  href={item === 'Collections' ? '/collections' : item === 'New Arrivals' ? '/new_arrival' : item === 'Design' ? '/design' : item === 'Trade' ? '/trade' : '#'} 
+                  className={`text-sm font-medium text-gray-400 hover:text-gray-900 transition-all duration-700 relative group ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}
+                  style={{ transitionDelay: `${i * 100 + 500}ms` }}
+                >
+                  {item}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gray-900 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Right side - Cart/Search */}
+          <div className={`flex items-center space-x-6 flex-shrink-0 transition-opacity duration-1000 delay-700 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
             <button className="hidden sm:block text-gray-900 hover:text-gray-600 transition-colors">
               <span className="text-sm font-medium">Search</span>
             </button>
