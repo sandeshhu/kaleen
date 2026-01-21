@@ -1,0 +1,14 @@
+# Allow all crawlers (Google, Bing, etc.)
+User-agent: *
+Allow: /
+
+# Disallow specific private routes
+# (Add any folders you don't want Google to see)
+Disallow: /api/
+Disallow: /admin/
+Disallow: /account/
+Disallow: /checkout/
+
+# Optional: Add your sitemap if you have one (Recommended)
+# Replace 'your-domain.com' with your actual Vercel link later
+Sitemap: https://your-domain.com/sitemap.xml

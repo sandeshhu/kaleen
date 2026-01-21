@@ -1,26 +1,66 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Custom Animations */
+@layer utilities {
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  
+  .preserve-3d {
+    transform-style: preserve-3d;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes fade-in-up {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes reveal-mask {
+  0% { transform: translateY(100%); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes scale-down {
+  0% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@keyframes fly-across-screen {
+  0% { 
+    left: -300px; 
+    bottom: 20%; 
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  10% { opacity: 1; }
+  40% { 
+    left: 40%; 
+    bottom: 40%; 
+    transform: scale(1);
+  }
+  60% { 
+    left: 60%; 
+    bottom: 50%; 
+    transform: scale(1) rotate(5deg);
+  }
+  100% { 
+    left: 120%; 
+    bottom: 80%; 
+    transform: scale(0.8);
+    opacity: 0;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-scale-down {
+  animation: scale-down 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fly-carpet {
+  animation: fly-across-screen 5s ease-in-out forwards;
 }
